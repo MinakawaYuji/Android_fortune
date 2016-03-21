@@ -10,6 +10,7 @@ import com.games.android.android_fortune.common.graphic.GlGraphics;
 import com.games.android.android_fortune.common.graphic.GlGraphicsImpl;
 import com.games.android.android_fortune.common.graphic.Graphics;
 import com.games.android.android_fortune.common.input.Input;
+import com.games.android.android_fortune.common.input.InputImpl;
 
 /**
  * アクティビティーの制御を行うクラス
@@ -18,10 +19,10 @@ public abstract class GlGame extends Activity implements Game{
 
     /** Glを描画する為のビュー */
     GLSurfaceView glView;
-
     /** Gl設定項目を取得する為のインスタンス */
     GlGraphics glGraphics;
-
+    /** 描画画面のイベントを取得する */
+    Input input;
     /** 画面を出力する為のクラス */
     Screen screen;
 
@@ -36,6 +37,7 @@ public abstract class GlGame extends Activity implements Game{
 
         /** 初期化項目の設定 */
         glGraphics = new GlGraphicsImpl(glView);
+        input = new InputImpl(this,glView,300,480);
         screen = getStartScreen();
     }
 
@@ -51,7 +53,7 @@ public abstract class GlGame extends Activity implements Game{
 
     @Override
     public Input getInput() {
-        return null;
+        return input;
     }
 
     @Override
