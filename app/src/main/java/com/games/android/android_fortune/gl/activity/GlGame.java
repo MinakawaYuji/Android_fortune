@@ -12,7 +12,7 @@ import com.games.android.android_fortune.common.graphic.Graphics;
 import com.games.android.android_fortune.common.input.Input;
 
 /**
- * Created by sanins.inshink on 2016/03/12.
+ * アクティビティーの制御を行うクラス
  */
 public abstract class GlGame extends Activity implements Game{
 

@@ -7,7 +7,8 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 /**
- * Created by sanins.inshink on 2016/03/12.
+ * 画面描画の制御を行う。
+ * 位置付け的にはControllerに相当
  */
 public class GlView implements GLSurfaceView.Renderer {
 
