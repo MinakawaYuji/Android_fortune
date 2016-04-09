@@ -40,7 +40,9 @@ public class GlStartScreen extends GLScreen {
         Random rand = new Random();
         Log.println(Log.ASSERT,"glGraphics : ",String.valueOf(glGraphics));
         Log.println(Log.ASSERT,"getGl() : ",String.valueOf(glGraphics.getGl()));
+
         GL10 gl = glGraphics.getGl();
+
         gl.glClearColor(rand.nextFloat(), rand.nextFloat(),
                 rand.nextFloat(), 2);
 
