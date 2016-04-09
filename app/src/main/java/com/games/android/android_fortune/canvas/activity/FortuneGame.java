@@ -26,7 +26,6 @@ public abstract class FortuneGame extends Activity implements Game {
 
     @Override
     public void onCreate(Bundle savedInstanceState){
-        Log.println(Log.ASSERT,"FortuneGame :","↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓開始(onCreate)↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
 
         super.onCreate(savedInstanceState);
         boolean isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
@@ -53,7 +52,6 @@ public abstract class FortuneGame extends Activity implements Game {
 
         Log.println(Log.ASSERT,"FortuneGame ",String.valueOf(getStartScreen()));
         setContentView(view);
-        Log.println(Log.ASSERT,"FortuneGame ","↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑終了(onCreate)↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑");
     }
 
     @Override

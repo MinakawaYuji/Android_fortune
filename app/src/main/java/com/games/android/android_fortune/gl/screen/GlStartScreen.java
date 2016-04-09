@@ -5,14 +5,17 @@ import android.util.Log;
 import com.games.android.android_fortune.common.game.GLScreen;
 import com.games.android.android_fortune.common.game.Game;
 import com.games.android.android_fortune.common.game.Screen;
+import com.games.android.android_fortune.common.input.Input;
+import com.games.android.android_fortune.common.input.Input.TouchEvent;
 import com.games.android.android_fortune.gl.activity.GlGame;
 
+import java.util.List;
 import java.util.Random;
 
 import javax.microedition.khronos.opengles.GL10;
 
 /**
- * Created by sanins.inshink on 2016/03/12.
+ * Gl系の画面を描画する際のスタート画面
  */
 public class GlStartScreen extends GLScreen {
 
@@ -21,8 +24,19 @@ public class GlStartScreen extends GLScreen {
     }
 
     @Override
+    /**スタート画面における画面の描画を更新する */
     public void update(float deltaTime) {
-        Log.println(Log.ASSERT,"AndroidStartProgramGL ","getStartScreen : 開始");
+        //描画画面におけるユーザーのインプットを取得する
+        Input in = game.getInput();
+
+        Log.println(Log.ASSERT,"Input ",String.valueOf(in));
+        Log.println(Log.ASSERT,"in.getTouchEvents() ",String.valueOf(in.getTouchEvents()));
+        List<TouchEvent> event = in.getTouchEvents();
+
+        if(event != null){
+            Log.println(Log.ASSERT,"getTouchEvents Size ",String.valueOf(event.size()));
+        }
+
         Random rand = new Random();
         Log.println(Log.ASSERT,"glGraphics : ",String.valueOf(glGraphics));
         Log.println(Log.ASSERT,"getGl() : ",String.valueOf(glGraphics.getGl()));
