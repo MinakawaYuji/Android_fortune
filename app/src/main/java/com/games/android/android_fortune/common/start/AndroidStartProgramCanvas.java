@@ -16,6 +16,7 @@ public class AndroidStartProgramCanvas extends FortuneGame {
 
     @Override
     public Screen getStartScreen() {
+        //新規画面の作成
         Log.println(Log.ASSERT,"CanvasStart  "," ");
         return new LoadingScreen(this);
     }
