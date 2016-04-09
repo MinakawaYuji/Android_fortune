@@ -9,7 +9,8 @@ import com.games.android.android_fortune.common.graphic.Graphics.PixMapFormat;
 import com.games.android.android_fortune.common.game.Screen;
 
 /**
- * Created by sanins.inshink on 2016/02/23.
+ * 最初のローディングで呼び出されるアセット読込用クラス
+ * 画面で読み込むアセットを読み込む.
  */
 public class LoadingScreen extends Screen {
 
