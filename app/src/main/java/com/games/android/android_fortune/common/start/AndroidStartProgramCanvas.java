@@ -8,7 +8,7 @@ import com.games.android.android_fortune.canvas.activity.FortuneGame;
 import com.games.android.android_fortune.common.game.Screen;
 
 /**
- *  アンドロイドが起動した際に、onCreateから最初にアクセスするクラス（画面関連において）。
+ *  アンドロイドが起動した際に、onCreateから最初にアクセスするクラス（Canvas画面において）。
  *  このクラスから次のスクリーンに遷移する、(LoadingScreen)
  */
 
@@ -16,7 +16,6 @@ public class AndroidStartProgramCanvas extends FortuneGame {
 
     @Override
     public Screen getStartScreen() {
-        //新規画面の作成
         Log.println(Log.ASSERT,"CanvasStart  "," ");
         return new LoadingScreen(this);
     }
