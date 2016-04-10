@@ -26,6 +26,15 @@ public class GlStartScreen extends GLScreen {
     @Override
     /** スタート画面における画面の描画を更新する */
     public void update(float deltaTime) {
+
+
+        /** 実装やる事リスト */
+        /** 1. Startボタンを設置する */
+        /** 2. Touchイベントを認識させる */
+        /** 3. ViewPortを変更する処理を追加する */
+        /** 4. タッチした場所に花火を作る */
+
+
         /** Inputのインスタンスを取得する */
         Input in = game.getInput();
 
