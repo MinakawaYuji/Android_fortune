@@ -24,9 +24,9 @@ public class GlStartScreen extends GLScreen {
     }
 
     @Override
-    /**スタート画面における画面の描画を更新する */
+    /** スタート画面における画面の描画を更新する */
     public void update(float deltaTime) {
-        //描画画面におけるユーザーのインプットを取得する
+        /** Inputのインスタンスを取得する */
         Input in = game.getInput();
 
         Log.println(Log.ASSERT,"Input ",String.valueOf(in));
