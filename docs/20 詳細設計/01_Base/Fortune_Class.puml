@@ -1,0 +1,148 @@
+@startuml
+
+
+interface Game{
+    __
+    .. UIのインプットを取得 ..
+    + getInput() :  Input
+    .. ファイルのIOを取得 ..
+    + getFileIO() : FileIO
+    .. 画面グラフィックを管理 ..
+    + getGraphics() : Graphics
+    .. 音声を管理 ..
+    + getAudio() : Audio
+    .. アクティビティの変更 ..
+    + moveActivity() : void
+    .. 描画するスクリーンの設定 ..
+    + setScreen(Screen screen) : void
+    .. 現在のスクリーンを取得 ..
+    + getCurrentScreen() : Screen
+    .. 開始するスクリーンの取得 ..
+    + getStartScreen() : Screen
+}
+
+abstract class GlGame{
+    .. Glを描画する為のビュー ..
+    GLSurfaceView glView;
+    .. Gl設定項目を取得する為のインスタンス ..
+    GlGraphics glGraphics;
+    .. 描画画面のイベントを取得する ..
+    Input input;
+    .. 画面を出力する為のクラス ..
+    Screen screen;
+    __
+    .. スタート ..
+    + onCreate(Bundle savedInstanceState) : void
+    .. Glグラフィックの取得 ..
+    + getGLGraphics() : GlGraphics
+    .. グラフィックの取得 ..
+    + getGraphics() : Graphics
+    .. UIイベントの取得 ..
+    + getInput() : Input
+    .. Activityの変更の取得 ..
+    + moveActivity() : void
+    .. 現在のスクリーンの取得 ..
+    + getCurrentScreen() : Screen
+    .. スクリーンを設定 ..
+    + setScreen(Screen screen) : void
+}
+
+
+interface Graphics{
+    + newPixmap(String fileName, PixmapFormat format) : Pixmap
+    + clear(int color) : void
+    + drawPixel(int x, int y, int color) : void
+    + drawLine(int x, int y, int x2, int y2, int color) : void
+    + drawRect(int x, int y, int width, int height, int color) : void
+    + drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY,int srcWidth, int srcHeight) : void
+    + drawPixmap(Pixmap pixmap, int x, int y) : void
+    + getWidth() : int
+    + getHeight() : int
+}
+
+class GraphicsImpl {
+    AssetManager assets;
+    Bitmap frameBuffer;
+    Canvas canvas;
+    Paint paint;
+    Rect srcRect = new Rect();
+    Rect dstRect = new Rect();
+    __
+    + newPixmap(String fileName, PixmapFormat format) : Pixmap
+    + clear(int color) : void
+    + drawPixel(int x, int y, int color) : void
+    + drawLine(int x, int y, int x2, int y2, int color) : void
+    + drawRect(int x, int y, int width, int height, int color) : void
+    + drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY ,int srcWidth, int srcHeight) : void
+    + drawPixmap(Pixmap pixmap, int x, int y) : void
+    + getWidth() : int
+    + int getHeight() {
+}
+
+
+
+
+class GlView{
+    ..ゲーム状態を表すENUM..
+    enum GLGameState
+    ..ゲーム状態初期化 ..
+    GLGameState state = GLGameState.Initialized;
+    ..GlGameのインスタンス ..
+    GlGame glgame;
+    ..スレッド管理用オブジェクト ..
+    Object stateChanged = new Object();
+    ..ゲーム時間のデルタタイム計算用 ..
+    long startTime = System.nanoTime();
+    --
+    .. コンストラクタ ..
+    + GlView(GlGame glgame) : void
+}
+
+
+class AndroidStartProgramCanvas extends FortuneGame{
+    __
+    .. ゲームをスタートする ..
+    + getStartScreen() :     Screen
+}
+
+
+class LoadingScreen extends Screen{
+    __
+    .. コンストラクタ ..
+    + LoadingScreen(Game game) : void
+    .. アセットをロードする ..
+    + update(float deltaTime)  : void
+    @Override
+    + present(float deltaTime)  : void
+    + pause()                   : void
+    + resume()                  : void
+    + dispose()                 : void
+}
+
+
+
+
+Game <|.. GlGame
+GlView *- GlGame
+Graphics <|.. GraphicsImpl
+
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+
+@enduml
