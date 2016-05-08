@@ -1,12 +1,13 @@
 package com.games.android.android_fortune.common.game;
 
+import com.games.android.android_fortune.common.file.FileIO;
 import com.games.android.android_fortune.common.graphic.Graphics;
 import com.games.android.android_fortune.common.input.Input;
 
 public interface Game {
     public Input getInput();
 
-    //public FileIO getFileIO();
+    public FileIO getFileIO();
 
     public Graphics getGraphics();
 

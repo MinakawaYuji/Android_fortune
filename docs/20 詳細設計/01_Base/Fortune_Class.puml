@@ -24,6 +24,8 @@ interface Game{
 abstract class GlGame{
     .. Glを描画する為のビュー ..
     GLSurfaceView glView;
+    .. グラフィック ..
+    Graphics graphics;
     .. Gl設定項目を取得する為のインスタンス ..
     GlGraphics glGraphics;
     .. 描画画面のイベントを取得する ..
@@ -46,7 +48,6 @@ abstract class GlGame{
     .. スクリーンを設定 ..
     + setScreen(Screen screen) : void
 }
-
 
 interface Graphics{
     + newPixmap(String fileName, PixmapFormat format) : Pixmap
@@ -76,7 +77,7 @@ class GraphicsImpl {
     + drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY ,int srcWidth, int srcHeight) : void
     + drawPixmap(Pixmap pixmap, int x, int y) : void
     + getWidth() : int
-    + int getHeight() {
+    + int getHeight()
 }
 
 
@@ -123,6 +124,7 @@ class LoadingScreen extends Screen{
 
 
 Game <|.. GlGame
+GlGame *- Graphics
 GlView *- GlGame
 Graphics <|.. GraphicsImpl
 
@@ -139,10 +141,6 @@ Collection <|- List
 AbstractCollection <|- AbstractList
 AbstractList <|-- ArrayList
 
-class ArrayList {
-Object[] elementData
-size()
-}
 
 
 @enduml
