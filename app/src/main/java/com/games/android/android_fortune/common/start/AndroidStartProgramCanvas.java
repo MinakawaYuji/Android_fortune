@@ -3,6 +3,7 @@ package com.games.android.android_fortune.common.start;
 
 import android.util.Log;
 
+import com.games.android.android_fortune.common.file.FileIO;
 import com.games.android.android_fortune.common.loading.LoadingScreen;
 import com.games.android.android_fortune.canvas.activity.FortuneGame;
 import com.games.android.android_fortune.common.game.Screen;

@@ -8,6 +8,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.games.android.android_fortune.common.file.FileIO;
 import com.games.android.android_fortune.common.game.Game;
 import com.games.android.android_fortune.common.game.Screen;
 import com.games.android.android_fortune.common.graphic.GraphicsImpl;
@@ -87,6 +88,12 @@ public abstract class FortuneGame extends Activity implements Game {
             throw new IllegalArgumentException("Screen must not be null");
         this.screen = screen;
     }
+
+    @Override
+    public FileIO getFileIO() {
+        return null;
+    }
+
     @Override
     public Screen getCurrentScreen() {
         return screen;
