@@ -35,6 +35,9 @@ public class GlView implements GLSurfaceView.Renderer {
         this.glgame = glgame;
     }
 
+    /**
+     * GlSurfaceView作成時に実行されるメソッド
+     * */
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         glgame.getGLGraphics().setGl(gl);
@@ -59,5 +62,4 @@ public class GlView implements GLSurfaceView.Renderer {
         Log.println(Log.ASSERT,"ggetCurrentScreen() : ",String.valueOf(glgame.getCurrentScreen()));
         glgame.getCurrentScreen().update(deltaTime);
     }
-
 }

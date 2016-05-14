@@ -8,7 +8,8 @@ import com.games.android.android_fortune.gl.activity.GlGame;
 import com.games.android.android_fortune.gl.screen.GlStartScreen;
 
 /**
- * Created by sanins.inshink on 2016/03/11.
+ *  アンドロイドが起動した際に、onCreateから最初にアクセスするクラス（Open GL画面において）。
+ *  このクラスから次のスクリーンに遷移する、(LoadingScreen)
  */
 public class AndroidStartProgramGL extends GlGame{
 
