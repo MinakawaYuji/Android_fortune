@@ -27,7 +27,7 @@ public abstract class FortuneGame extends Activity implements Game {
 
     @Override
     public void onCreate(Bundle savedInstanceState){
-
+//a
         super.onCreate(savedInstanceState);
         boolean isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         Log.println(Log.ASSERT,"isLandscape : ",String.valueOf(isLandscape));
