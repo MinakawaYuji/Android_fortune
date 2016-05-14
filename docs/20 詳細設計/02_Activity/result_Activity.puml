@@ -1,0 +1,15 @@
+@startuml
+title <size:18>result</size>
+
+(*) --> "順位取得"
+
+--> if "1位" then
+-->partition "正常系処理 2"
+elseif "2位" then
+-->partition "正常系処理 2"
+elseif "3位" then
+-->partition "正常系処理 2"
+else
+-->partition "正常系処理 2"
+endif
+@enduml
